@@ -10,10 +10,14 @@ class Personne{
         $this->nom=$nom;
         $this->age=$age;
     }
+    public function danser(){
+        return $this->prenom. " est entrain de danser" . PHP_EOL;
+    }
+    public function nomComplet(){
+        //return $this->nom .' ' . $this->prenom .' ' .$this->age . PHP_EOL;
+        return sprintf('%s %s %d', $this->nom, $this->prenom, $this->age);
+    }
 }
-
-
-
 
 //Créer un nouveau objet ou une nouvelle instance à partir de la classe Personne, instancier
 $magne = new Personne('Magne', 'Jean', 102);
@@ -31,6 +35,11 @@ echo "<br>";
 echo $cyril->prenom . PHP_EOL;
 echo $cyril->nom . PHP_EOL;
 echo $cyril->age . PHP_EOL;
+echo "<br>";
+echo $magne->danser();
+echo "<br>";
+$ToutLeNom= $magne->nomComplet();
+echo $ToutLeNom . PHP_EOL;
 
 
 
