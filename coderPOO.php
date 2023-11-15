@@ -46,6 +46,69 @@
         Par convention, le nom de la classe commence par une lettre majuscule et chaque classe sera créé dans un fichier unique. 
         Le fichier PHP contiendra donc uniquement la classe ainsi que ses attributs et ses méthodes. Ce fichier pourra alors être appelé partout dans notre site
         ou application grace notament aux inclusions de fichiers que nous avons appris jusqu'ici. 
+        Syntaxe : 
+
+            class MaClass{
+
+            }
+
+        Les différentes visibilités d'une propriété
+
+        ** La visibilité publique **
+        Un propriété de visibilité publique peut etre apppelé à n'importe quel endroit du site. Cela signifie également qu'elle peut-être modifiée de n'importe quel endrroit du site.
+        Sa syntaxe : public $_propiété. 
+
+        ** La propriété de visibilité privée **
+        Un propriété de visibilité privée ne peut etre appelée que depuis la classe. Cela signifie égalment qu'elle ne pourra être modifié uiquement à partir de la classe. 
+        Sa sybtaxe : private $_propriété. 
+
+        ** Ma propriété de visibilité protégée **
+        Un propriété de visibilité protégé ne peut être appelé que depuis la classe parent mais aussi depuis une ou des classes enfants. Cela signifie qu'elle ne pourra  etre 
+        modifié qu'a partir de la de la classe parent ou des classe enfants.
+        Sa syntaxe : protected $_propriete.
+        
+        --- Les mutateurs ---
+        Un mutateur (ou un setter) permet d'affecter une valeur à une propriété d'un objet. Grâce aux mutateurs nous allons pouvoir affecter n'importe quel valeur à notre propriété
+        lors et ou apres la création d'un nouvel objet. 
+            -- Créer un mutateur 
+            la création d'un mutateur se fera donc au travers d'une méthode. me mutateur portera la mention set, comme setter. 
+            Puis nous lui donnerons le nom de la propriété qu'il devra affecter d'une nouvelle valeur. 
+            Syntaxe : 
+            public function setPrenom($prenom){
+                $this->prenom  = $prenom;
+            }
+            Set prenom est une méthode de type mutateur et de visibilité publique. Elle possède un pramètre $prenom. Ce paramètre est directement affecté à l'attribut
+            $prenom grâce aux commandes $this->prenom;
+            Grae à cette méthode à qui nous passons la variable $prenom, nous pouvons affecter un prénom à chaque personne que nous créérons avec la table (class) Personne. 
+            
+            --- Accéder à un mutateur
+            L'accès à un mutateur se fait comme nous l'avons vu dans l'example de la Personne c a dire avec l'aide du caractère ->:
+            $emi = new Personne();
+            $emi->setPrenom('Pierre'); nous accédons à la méthode setPrenon en lui affectant l'argument Pierre.
+
+            En résumé : grâce aux mutateurs, nous avons pu modifier la valeur de la propriété privée (private), en lui affectant une valeur de notre choix.
+    
+    --- Les assesseurs ---
+    La créatio d'un assesseur se fera donc aux travers d'une méthode. L'asseseeur portera la mention get, comme getteur. Puis nous lui donnerons le nom 
+    de la propriété dont il affichera la valeur. 
+    Syntaxe : 
+    public function getPrenom(){
+        return $this->personne;
+    }
+    nb : getPrenom() est une méthode de type assesseur et de visibilité publique. Elle est relativement simple puisqu'elle se contente de retourner la valeur du paramètre $prenom.
+    Grace à la méthode getPrenom(), nous récupérons le contenu de la propriété $prenom.
+    -- Accéder à un assesseur
+    l'aacès à un assesseur se fait avec l'aide du caractère ->: 
+    $emi = new Personne;
+    $emi -> setPrenom('Pierre');
+    echo $emi->getPrenom();
+    Sur la dernière ligne, nous accédons à la méthode getPrenom afin de récupérer l valeur de la propriété $prenom.
+    
+    * En résumé : grace à l'assesseur, nous avons pu accéder à la valeur de l'attribut privée $prenom;
+
+    CONCLUSION
+    Un mutateur permet de modifier la valeur d'une propriété. Alors qu'assésseur permet d'en récupérer son contenu.
+            
         
 
 
