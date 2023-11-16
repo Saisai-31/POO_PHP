@@ -12,7 +12,7 @@
     $infirmier -> setPrenom('Clarisse');
     $boulanger -> setPrenom('Estelle');
 
-    echo $agriculteur -> getPrenom()." ".$agriculteur -> dormir().".<br>"; 
+    echo $agriculteur -> dormir().".<br>"; //Fais un return prenom dans la class enfant PersonneAgriculture dans la function dormir()
     echo $boulanger -> getPrenom()." ".$boulanger -> dormir().".<br>"; 
     echo $infirmier -> getPrenom()." ".$infirmier -> dormir()." !<br>"; 
 

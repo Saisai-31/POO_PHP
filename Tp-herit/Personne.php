@@ -24,9 +24,9 @@
             return $this -> age;
         }
 
-        public function dormir(){
-            return "dort";
-        }
+        // public function dormir(){
+        //     return "dort";
+        // }
 
 
     }
