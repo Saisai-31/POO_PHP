@@ -235,4 +235,22 @@ Maintenant que les deux classes Eleve et EleveFille sont créées, nous pouvons 
     // $eleveN2 -> setPrenom('22');
 
 
+/*
+ LE CONSTRUCTEUR
+ *** Principe ***
+ Le constructeuteur est ce qu'on appelle en POO, une méhode magique. Son principe est de créer des valeurs par défaut au moment de la création  d'un nouvel objet. Le constructeur est donc une méthode. Afin de le différencier d'une méthode dite classique, le constructeur sera déclaré ainsi : 
+    function __construct()
+Il possèdera deux caractères underscrores et sera suivi d'un mot clé construct
+
+** Création 
+Nous allons reprendre le fichier Eleve.class.php en remettant sa propriété $_prenom en visibilité privé, car nous n'allons pas utiliser de classe fille afin de complexifier l'explication.
+
+class Eleve{
+    private $_prenom;
+    public function setPrenom($prenom){
+        
+    }
+}
+*/
+
 ?>
