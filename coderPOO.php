@@ -108,13 +108,131 @@
 
     CONCLUSION
     Un mutateur permet de modifier la valeur d'une propriété. Alors qu'assésseur permet d'en récupérer son contenu.
-            
-        
 
 
 
+    LE PRINCIPE DE L'ENCAPSULATION
+    ***Définition***
+    Le principe de l'encapsulation est un notion fondamentale de la POO. L'encapsulation consiste à protéger l'information contenu dans un objet en ne proposant que des méthodes pour manipuler les objets.
+
+
+    *** Mise en pratique ***
+    Sans le savoir nous avons dans la partie précédante mis en place ce principe d'encapsulation. En effet, concernant l'attribut $prenon, nous lui avons affecté une visibilité privée. Nous avons vu
+    qu'il n'était pas possible d'y acceder directement. C'est la raison pour laquelle nous avons créé des méthodes afin de pouvoir modifier et adfficher le contenu de la propriété $prenom (et les 
+    autres : $nom, $age).
+    Et lorsque nous avons crée ces méthodes, nous leur avons attribué une visibilité publique afin de pouvoir y acceder et donc les manipuler. 
+
+    ***Les niveaux d'accessibilité***
+    Les niveaux d'accessibilité vont vous sembler familières puisque nous les avons déjà vu précedement. 
+    Rappel : 
+    La visibilité public : permet d'acceder à la propriété ou à la méthode depuis l'intérieur ou depuis l'extérieur de la classe. 
+    La visibilité private : permet d'accéder à la propriété ou à la méthode uniquement depuis l'intérieur de la classe. 
+    La visibilité protected : permet d'accéder à la propriété ou à la méthode depuis l'intérieur de la classe elle-même ou de ses classes filles. 
+
+    ***Principe général***
+    Les propriétés d'un objet seront privées ou protégées afin de n'être accessible que depuis la classe elle-même ou depuis une classe fille.
+    Les méthodes d'un objet seront publiques afin afin de pouvoir y acceder de n'importe quel endroit de notre site, afin de manipuler les attributs ou (propriété). 
+
+
+    En résumé, grace aux exemples vus, nous avons acquis le principe de l'encapsulation, ce qui permet d'en faire un simple rappel et bien ordonner nos nouvelles connaissances 
+    concernant la POO.
+
+
+
+    L'HERITAGE
+    ***Principe de l'héritage***
+    Lorsque nous créons une classe, celle-ci peut-etre une classe générale qui contiendra ses propres propriétés et méthodes. Mais nous auront peut etre besoin d'avoir des classes spécifiques
+    qui soient relié à la classe générale.
+
+    ---Cas concret : 
     */
 
+    // class Eleve {
+    //     private $_prenom;
+    //     public function setPrenom($prenom){
+    //         $this->_prenom = $prenom;
+    //     }
+    //     public function getPrenom(){
+    //         return $this->_prenom;
+    //     }
+    // }
+    
+    /*
+    Nous allons créer un nouvelle classe qui sera un classe fille de la classe Eleve. Cette nouvelle classe appellera la propriété $_prenom de la classe Eleve, et lorsque nous demanderons à afficher le prenom issu de cette nouvelle classe, nous souhaiterons obtenir un prénom dont la 1ere lettre sera en majuscule.
+    Nous enrichirons également cette classe d'une propriété devant récupérer l'age. Nous l'appelerons, cette classe EleveFille et nous nommerons le fichier contenant cette nouvelle classe 
+    EleveFille.class.php  
+
+    Avant d'écrire cette nouvelle classe, nous allons devoir modifier la visibilité de la propriété = _prenom de la classe Eleve, puisque nous souhaitons aacéder à cette propriété de la class depuis la classe fille que nous allons créer. 
+   Par consequence, la visibililités  de la proprieté  $_prenom ne sera plus privée mais protégé (protected).
+Ceci afin de pouvoir y accéder depuis la classe fille 
+ /
+ //exemple 
+
+ class  Eleve {
+  protected $_prenom;
+  public function setPrenom($prenom){ 
+  $this->_prenom = $prenom ;
+   }
+
+  public function getPrenom() {
+    return $this-> _prenom;
+  }
+   }
+ // maintenant  nous pouvons créer notre classe fille qui pourra cceder a la proprieté $_prenom de la classe Eleve*/
+//  class Elevefille extends Eleve {
+//  }
+    
+
+/*
+    Ainsi nous pouvons accéder à la classe mère, soit la classe Eleve. Ensuite, nous avons dit que nous souhaitons accéder à la propriété =_prenom de la classe Eleve afin de pouvoir écrire le prénom avec la 1ere lettre en majuscule. 
+    Pour cela, il suffit simplement de réécrire la méthoode setPrenom à l'intériur de la classe EleveFille en luo ajoutant la fonction 
+    ucfirst() qui permet d'afficher la 1ere lettre d'une chaine de caracteres en majuscule.
+*/ 
+
+// public function setPrenom($prenom){
+//     $this->_prenom = ucfirst($prenom);
+// }
+    
+/*
+Il n'est pas utile de réécrire la méthode et le prénom puisque celle ci à deja été écrite dans la classe Eleve, dont la class EleveFille en est héritère.
+
+Il nous reste à déclarer la propriété concernant l'age ainsi que ses méthodes (assesseur et mutateur). Celle-ci seront propres à la classe EleveFille.
+*/
+
+// class Elevefille extends Eleve{
+//     private $_age;
+
+//     public function setAge($age){
+//         $this->_age = $age;
+//     }
+//     public function getAge(){
+//         return $this->_age;
+//     }
+//     public function setPrenom($prenom){
+//         $this->_prenom = ucfirst($prenom);
+//     }
+// }
+
+/*
+Nous déclarons la propriété $_age en visibilité private car cette propriété ne sera accesiible que paer la classe qui la contient. 
+C'est à dire la claffe EleveFille.
+Ensuite nous déclarons les méthodes get et set afin de pouvoir modifier l'age et l'afficher en cas d'appel. Exactement comme nous l'avons fait 
+pour la propriété $_prenom de la classe Eleve. 
+
+*** Récupération des infomations ***
+Maintenant que les deux classes Eleve et EleveFille sont créées, nous pouvons les inclures dans un autres fichier (index.php) et nous servir de leur méthodes.
+*/
+       
+
+    // include('Eleve.php');
+    // include('EleveFille.php');
+
+    // $eleveN1 = new Eleve();
+    // $eleveN2 = new EleveFille();
+
+    // $eleveN1 -> setPrenom('alain');
+    // $eleveN2 -> setPrenom('julie');
+    // $eleveN2 -> setPrenom('22');
 
 
 ?>
