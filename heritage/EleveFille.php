@@ -1,6 +1,8 @@
 <?php
+    //Le constructor est par defaut pour la création de notre objet instancié par new.
+    //extends permet d'appeler le papa, d'hériter de la class Eleve.
     class Elevefille extends Eleve{
-        public $_age;
+        private $_age;
 
         public function setAge($age){
             $this->_age = $age;
@@ -14,3 +16,4 @@
     }
 
 ?>
+
