@@ -242,15 +242,141 @@ Maintenant que les deux classes Eleve et EleveFille sont créées, nous pouvons 
     function __construct()
 Il possèdera deux caractères underscrores et sera suivi d'un mot clé construct
 
-** Création 
-Nous allons reprendre le fichier Eleve.class.php en remettant sa propriété $_prenom en visibilité privé, car nous n'allons pas utiliser de classe fille afin de complexifier l'explication.
+        -- La création
+    Nous allons reprendre le fichier Eleve.php en remettant sa propriété $_prenom en visibilité privée, car nous n'allons pas utiliser de classe fille afin de ne pas compexifier l'explication.
+    */
+    // class Eleve{
+    //     private $_prenom;
+    //     public function setPrenom($prenom){
+    //         $this->_prenom=$prenom;
+    //     }
+    //     public function getPrenom(){
+    //         return $this->_prenom;
+    //     }
+    // }
+
+/*
+Nous souhaitons enrichir notre classe Eleve en récupérant de manière automatique la dat d'inscription d'un nouvel élève au moiment de sa décclaration lors de l'appel de ntre classe Eleve grâce au mot clé nex.
+    public function __construt(){
+        $this->dateInstruction = date('d/m/Y);
+    }
+Nb : notre construteur a été déclaré en visibilité publique afin de pouvoir être invoqué de n'importe quel endroit de notre site.
+Nous définissons l'objet courant grâce à la variable $this, en lui affectant la date au moment de l'inscription.
 
 class Eleve{
-    private $_prenom;
-    public function setPrenom($prenom){
-        
-    }
-}
-*/
+            private $_prenom;
+
+            // Constructeur
+            public function __construct(){
+                $this->dateInscription = date('d/m/Y');
+            }
+
+            public function setPrenom($prenom){
+                $this->_prenom=$prenom;
+            }
+            public function getPrenom(){
+                return $this->_prenom;
+            }
+        }
+
+Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
+
+    <?php
+    $eleve1 = new Eleve;
+    $eleve1->setPrenom('Pierre');
+    echo $eleve1->getPrenom().'<br />;
+    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
+
+    CONCLUSION
+    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.
+
+    Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
+
+    <?php
+    $eleve1 = new Eleve;
+    $eleve1->setPrenom('Pierre');
+    echo $eleve1->getPrenom().'<br />;
+    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
+
+    CONCLUSION
+    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.
+
+    Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
+
+    <?php
+    $eleve1 = new Eleve;
+    $eleve1->setPrenom('Pierre');
+    echo $eleve1->getPrenom().'<br />;
+    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
+
+    CONCLUSION
+    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.
+
+    Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
+
+    <?php
+    $eleve1 = new Eleve;
+    $eleve1->setPrenom('Pierre');
+    echo $eleve1->getPrenom().'<br />;
+    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
+
+    CONCLUSION
+    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.
+
+    `````
+php
+
+        class Eleve{
+            private $_prenom;
+
+            // Constructeur
+            public function __construct(){
+                $this->dateInscription = date('d/m/Y');
+            }
+
+            public function setPrenom($prenom){
+                $this->_prenom=$prenom;
+            }
+            public function getPrenom(){
+                return $this->_prenom;
+            }
+        }
+
+    /*
+    Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
+
+    <?php
+    $eleve1 = new Eleve;
+    $eleve1->setPrenom('Pierre');
+    echo $eleve1->getPrenom().'<br />;
+    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
+
+    CONCLUSION
+    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.    Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
+
+    <?php
+    $eleve1 = new Eleve;
+    $eleve1->setPrenom('Pierre');
+    echo $eleve1->getPrenom().'<br />;
+    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
+
+    CONCLUSION
+    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.
+
+    Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
+
+    $eleve1 = new Eleve;
+    $eleve1->setPrenom('Pierre');
+    echo $eleve1->getPrenom().'<br />;
+    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
+
+    CONCLUSION
+    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.
+
+
+    */
+
+
+
 
 ?>
