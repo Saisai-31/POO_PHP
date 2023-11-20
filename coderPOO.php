@@ -289,43 +289,18 @@ Nous allons à présent créer un nouvel élève puis nous irons récupérer sa 
     CONCLUSION
     Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.
 
-    Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
 
-    <?php
-    $eleve1 = new Eleve;
-    $eleve1->setPrenom('Pierre');
-    echo $eleve1->getPrenom().'<br />;
-    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
+    *** LES CONSTANTES ***
+    --- Principe d'une constante ---
+    Une constante de classe sera toujours attachée à la classe. Elle sera accéssible qu'en lecture et donc ne pourra en aucaun cas être modifiable ni de l'intérieur ni de l'extérieur de la classe.
 
-    CONCLUSION
-    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.
+    Une constante se définie à l'aide du mot clés const et suivi de son nom écrit en majuscule. 
+    cont NOMDELACONSTANTE;
 
-    Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
+    ---Crétion d'une constante---
+    Nous allons prendre le fichier Eleve dans l'état suivant, afin de ne pas se complexifier l'explication du fonctionnement de la constante.
 
-    <?php
-    $eleve1 = new Eleve;
-    $eleve1->setPrenom('Pierre');
-    echo $eleve1->getPrenom().'<br />;
-    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
-
-    CONCLUSION
-    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.
-
-    Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
-
-    <?php
-    $eleve1 = new Eleve;
-    $eleve1->setPrenom('Pierre');
-    echo $eleve1->getPrenom().'<br />;
-    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
-
-    CONCLUSION
-    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.
-
-    `````
-php
-
-        class Eleve{
+class Eleve{
             private $_prenom;
 
             // Constructeur
@@ -340,40 +315,31 @@ php
                 return $this->_prenom;
             }
         }
+        
+        Nous souhaitons définir une constante à notre classe. Un élément statique, invarialble et qi sera toujours ainsi.
+        La constante que nous voulons créer sera la chaine de caractère suivante :
 
-    /*
-    Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
+        Syntaxe : const ECOLE = 'Elève de notre école';
 
-    <?php
-    $eleve1 = new Eleve;
-    $eleve1->setPrenom('Pierre');
-    echo $eleve1->getPrenom().'<br />;
-    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
+        NB : Par defaut une constante est toujours publique. Donc on ne précise pas sa visibilité. 
+        Egalement, une constante est dite static. Pour récupérer sa valeur, nous utiliserons les carractères :: (double 2 points).
 
-    CONCLUSION
-    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.    Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
+        class Eleve{
+        const ECOLE = 'Elève de notre école'; // Création de la constante
+        private $_prenom;
 
-    <?php
-    $eleve1 = new Eleve;
-    $eleve1->setPrenom('Pierre');
-    echo $eleve1->getPrenom().'<br />;
-    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
+            public function setPrenom($prenom){
+                $this->_prenom=$prenom;
+            }
+            public function getPrenom(){
+                return $this->_prenom;
+            }
+        }
 
-    CONCLUSION
-    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.
+        Résumé : 
+        Apres avoir apris à créer une constante, nous pouvons retenir qu'une constante de classe sera toujours accessible en lecture et sera appelée via les caractères :: (double 2 points).
 
-    Nous allons à présent créer un nouvel élève puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.
-
-    $eleve1 = new Eleve;
-    $eleve1->setPrenom('Pierre');
-    echo $eleve1->getPrenom().'<br />;
-    echo 'Cet élève a été inscrit le '.$eleve1->dateInscription;
-
-    CONCLUSION
-    Nous venons de créer une méthode constructeur qui nous permet de pouvoir obtenir des valeurs au moment de la création d'un nouvel objet.
-
-
-    */
+       */
 
 
 
