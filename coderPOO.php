@@ -222,9 +222,7 @@ pour la propriété $_prenom de la classe Eleve.
 *** Récupération des infomations ***
 Maintenant que les deux classes Eleve et EleveFille sont créées, nous pouvons les inclures dans un autres fichier (index.php) et nous servir de leur méthodes.
 */
-       git add . 
-       
-
+ 
     // include('Eleve.php');
     // include('EleveFille.php');
 
